@@ -5,7 +5,8 @@ int main(){
 
 //Carta A -------------------------------------------------------
     char estado_A [50], cidade_A [50], codigo_A [50];
-    int pontos_turisticos_A, populacao_A;
+    int pontos_turisticos_A;
+    unsigned long int populacao_A;
     float area_A, pib_A;
 
     printf("* * * * * * * SUPER-TRUNFO * * * * * * *\n\n\n");
@@ -28,7 +29,7 @@ int main(){
     
         //Int :
     printf("Digite a População : ");
-    scanf("%d", &populacao_A);
+    scanf("%lu", &populacao_A);
 
     printf("Digite a Quantidade de Pontos Turísticos : ");
     scanf("%d", &pontos_turisticos_A);
@@ -43,7 +44,8 @@ int main(){
 
     //Carta B -------------------------------------------------------
     char estado_B [50], cidade_B [50], codigo_B [50];
-    int pontos_turisticos_B, populacao_B;
+    int pontos_turisticos_B;
+    unsigned long int populacao_B;
     float area_B, pib_B;
 
     printf("\n- _ - ' - _ - CARTA B - _ - ' - _ -\n\n");
@@ -68,7 +70,7 @@ int main(){
     
         //Int :
     printf("Digite a População : ");
-    scanf("%d", &populacao_B);
+    scanf("%lu", &populacao_B);
 
     printf("Digite a Quantidade de Pontos Turísticos : ");
     scanf("%d", &pontos_turisticos_B);
@@ -81,17 +83,21 @@ int main(){
     scanf("%f", &pib_B);
     
     //Calculos:
-        //Carta A :
-    float densidade_populacional_A, pib_per_capita_A;
+        //Carta 
+    float densidade_populacional_A, pib_per_capita_A, super_poder_A;
 
     densidade_populacional_A = populacao_A / area_A;
     pib_per_capita_A = pib_A / populacao_A;
 
+    super_poder_A = (float)(populacao_A + pontos_turisticos_A + area_A + pib_A + (1 / densidade_populacional_A) + pib_per_capita_A);
+
         //Carta B :
-    float densidade_populacional_B, pib_per_capita_B;
+    float densidade_populacional_B, pib_per_capita_B, super_poder_B;
 
     densidade_populacional_B = populacao_B / area_B;
     pib_per_capita_B = pib_B / populacao_B;
+
+    super_poder_B = (float)(populacao_B + pontos_turisticos_B + area_B + pib_B + (1 / densidade_populacional_B) + pib_per_capita_B);
 
     //Área de apresentação de dados coletados :
 
